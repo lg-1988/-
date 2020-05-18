@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚光灯</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /* vw,vh视口单位 */
+    body{
+        background:#222;
+        display: flex;  
+        /* 弹性布局 */
+        justify-content: center;
+        /* 内容对齐*/
+        align-items: center;
+        /* 垂直居中*/
+        min-height: 100vh;  
+        /* 最小高度 */
+    }
+    h1{
+        color:#333;
+        font-size:8rem;
+        position: relative;
+    }
+    /* 伪类元素 */
+    h1:after{  
+        content:"SPOTLIGHT";
+        color:gold;
+        position:absolute;
+        /* left:50%;
+        top:50%;
+        transform: translate(-50%,-50%); 居中*/
+        left:0;
+        top:0;
+        background:-webkit-linear-gradient(left,#c23616,#192a56,#00d2d3,yellow,#6D214F,#2eB6de,#4cd137,#e84118);
+        background-clip:text;
+        -webkit-bakcgournd-clipp:text;
+        clip-path:circle(100px at 0% 50%);
+        -webkit-clip-path:circle(100px at 0% 50%);
+        animation: light 5s infinite;
+        /* 绑定动画 */
+    }
+    @keyframes light{
+        0%{
+            clip-path:circle(100px at 0% 50%);
+        -webkit-clip-path:circle(100px at 0% 50%);
+        }
+        50%{
+            clip-path:circle(100px at 100% 50%);
+        -webkit-clip-path:circle(100px at 100% 50%);
+        }
+        100%{
+            clip-path:circle(100px at 0% 50%);
+        -webkit-clip-path:circle(100px at 0% 50%);
+        }
+    }
+
+</style>
+<body>
+    <h1>SPOTLIGHT</h1>
+</body>
+</html>
